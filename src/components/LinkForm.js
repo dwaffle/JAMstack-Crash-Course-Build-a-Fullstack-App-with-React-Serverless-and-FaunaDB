@@ -50,6 +50,7 @@ export default function LinkForm({ refreshLinks }) {
                             onChange={(e) => setUrl(e.target.value)}
                         />
                     </div>
+                    <p>This form only supports http:// and https:// style links.</p>
                     <div className="form-group">
                         <label htmlFor="description">Description</label>
                         <textarea

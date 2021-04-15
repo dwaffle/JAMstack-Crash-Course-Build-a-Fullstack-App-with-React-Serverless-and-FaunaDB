@@ -6,7 +6,11 @@ const formattedResponse = require('./utils/formattedResponse');
 exports.handler = async (event) => {
     const { name, url, description } = JSON.parse(event.body);
     const variables = { name, url, description, archived: false };
+    const regexStart = /[https:\/\/||http:\/\/]/
     try {
+        if(!variables.url.match(regexStart)){
+            throw new Error("This page only supports http:// and https:// links")
+        }
         const { createLink: createdLink } = await sendQuery(
             CREATE_LINK,
             variables
