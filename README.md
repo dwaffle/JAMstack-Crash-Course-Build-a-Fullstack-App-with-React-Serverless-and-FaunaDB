@@ -51,3 +51,7 @@ of Netlify dashboard.
 [jamstack crash course video on youtube]:
   https://www.youtube.com/watch?v=73b1ZbmB96I
 [create react app]: https://github.com/facebook/create-react-app
+
+Credits: James Q Quick - see video above
+
+Doug Waffle - added restrictions on url types.
