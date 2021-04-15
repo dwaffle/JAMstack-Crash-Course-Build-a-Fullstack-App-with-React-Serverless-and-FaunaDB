@@ -4,6 +4,7 @@ export default function LinkForm({ refreshLinks }) {
     const [name, setName] = useState('');
     const [url, setUrl] = useState('');
     const [description, setDescription] = useState('');
+    const regexStart = /[https:\/\/||http:\/\/]/
 
     const resetForm = () => {
         setName('');
@@ -13,6 +14,9 @@ export default function LinkForm({ refreshLinks }) {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        if(!url.match(regexStart)){
+            throw new Error("This site only supports http:// or https:// links")
+        }
         const body = { name, url, description };
         try {
             const res = await fetch('/.netlify/functions/createLink', {
