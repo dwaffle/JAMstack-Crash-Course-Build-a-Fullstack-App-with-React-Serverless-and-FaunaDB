@@ -15,7 +15,7 @@ export default function LinkForm({ refreshLinks }) {
     const handleSubmit = async (e) => {
         e.preventDefault();
         if(!url.match(regexStart)){
-            throw new Error("This site only supports http:// or https:// links";
+            throw new Error("This site only supports http:// or https:// links");
         }
         const body = { name, url, description };
         try {
