@@ -1,5 +1,4 @@
 import React from 'react';
-import Carousel from 'react-multi-carousel';
 import LinkCard from './LinkCard';
   
 export default function LinkList({ links, refreshLinks }) {
